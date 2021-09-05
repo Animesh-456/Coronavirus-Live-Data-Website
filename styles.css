@@ -1,0 +1,31 @@
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.col {
+  width: 20%;
+  margin-left: 300px;
+  margin-right: 700px;
+  padding: 5px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+body {
+  background-color: #dedddd;
+}
+
+#details {
+  margin: auto;
+}
+
+.global {
+  width: 50%;
+  background-color: aqua;
+}

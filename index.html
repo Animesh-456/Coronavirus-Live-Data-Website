@@ -20,14 +20,134 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center mt-5">Coronavirus Live Data</h1>
+      
       <br />
-      <h2>Country</h2>
+      <br>
+      <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="pricing.css" rel="stylesheet">
+  </head>
+  
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+</svg>
+
+<div class="container py-3">
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        
+        <span class="fs-4"><h3>Coronavirus Live Data</h3></span>
+      </a>
+
+      
+      
+    </div>
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Covid-19</h1>
+      <p class="fs-5 text-muted">Here you will get to know about COVID cases all around the world. </p>
+      <br>
+      <h2>Global Data</h2>
+    </div>
+  </header>
+  <body>
+
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">New Confirmed</h5>
+        <p class="card-text">Global new confirmed cases</p>
+        <p class="card-text" id="newconf"><b></b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Confirmed</h5>
+        <p class="card-text">Global total confirmed cases</p>
+        <p class="card-text" id="totalconf"><b></b></p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">New Deaths</h5>
+        <p class="card-text">Global new death cases</p>
+        <p class="card-text" id="newdeath"><b></b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Deaths</h5>
+        <p class="card-text">Global total death cases</p>
+        <p class="card-text" id="totaldeath"><b></b></p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">New Recovered</h5>
+        <p class="card-text">Global new recovered cases</p>
+        <p class="card-text" id="newrecovered"><b></b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Recovered</h5>
+        <p class="card-text">Global total recovered cases</p>
+        <p class="card-text" id="totalrecovered"><b></b></p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+      
       <div class="input-group mt-5" >
 
        <input
         type="text"
-        placeholder="Search.."
+        placeholder="Search Country..."
         id="searchtype"
         style="width: 50%"
         class="form-control form-control-lg rounded-0"
@@ -40,55 +160,86 @@
         id="btnsubmit"
         onclick="Myfunction()"
       >
-        Submit
+        Search
       </button> 
       </div>
         
       <script src="main.js" type="text/javascript"></script>
       <br />
       <br />
-      <table class="table table-hover table-borderless" id="table">
-        <thead>
-          <tr>
-            <th>Country Name</th>
-            <th>Total Confirmed</th>
-            <th>Total Deaths</th>
-            <th>Total Recovered</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td id="data0">N/A</td>
-            <td id="data1">N/A</td>
-            <td id="data2">N/A</td>
-            <td id="data3">N/A</td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <div class="text-white bg-primary mb-3" style="width: 18rem">
-        <div class="card-body">
-          <h5 class="card-title">New Confirmed</h5>
+      
 
-          <p class="card-text" id="cardtext"></p>
-        </div>
-      </div>
-      <br />
-      <div class="text-white bg-primary" style="width: 18rem">
-        <div class="card-body">
-          <h5 class="card-title">New Deaths</h5>
-
-          <p class="card-text" id="cardtext2"></p>
-        </div>
-      </div>
-      <br />
-      <div class="text-white bg-primary" style="width: 18rem">
-        <div class="card-body">
-          <h5 class="card-title">New Recovered</h5>
-
-          <p class="card-text" id="cardtext3"></p>
-        </div>
+<main class="container" style="display: none;" onclick="Myfunction()" id="table">
+  <div class="bg-primary p-5 rounded" >
+    <h1 style="color:#FFFF" id="data0"></h1>
+    <br>
+    <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Confirmed</h5>
+        <p class="card-text">Total Confirmed Cases</p>
+        <p class="card-text" id="data1"><b></b></p>
       </div>
     </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Deaths</h5>
+        <p class="card-text">Total Death Cases</p>
+        <p class="card-text" id="data2"><b></b></p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Recovered</h5>
+        <p class="card-text">Total Recovered Cases</p>
+        <p class="card-text" id="data3"><b></b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">New Confirmed</h5>
+        <p class="card-text">New Confirmed Cases</p>
+        <p class="card-text" id="cardtext"><b></b></p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">New Deaths</h5>
+        <p class="card-text">New Death Cases</p>
+        <p class="card-text" id="cardtext2"><b></b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">New Recovered</h5>
+        <p class="card-text">New Recovered Cases</p>
+        <p class="card-text" id="cardtext3"><b></b></p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</main>
   </body>
 </html>

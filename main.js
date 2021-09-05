@@ -199,6 +199,7 @@ $(function () {
     source: availableTags
   });
 });
+
 function Myfunction() {
 
   fetch("https://api.covid19api.com/summary")
@@ -238,6 +239,33 @@ function Myfunction() {
         }
 
       }
-
+      document.getElementById("table").style.display = "block";
+      document.getElementById("details").style.display = "block";
     });
+
 }
+
+fetch("https://api.covid19api.com/summary")
+  .then((apidata) => {
+    //console.log(apidata);
+    return apidata.json();
+  })
+  .then((actualData) => {
+    const Globalnewconfirmed = actualData.Global.NewConfirmed;
+    document.getElementById("newconf").innerHTML = Globalnewconfirmed;
+
+    const GlobalTotalconfirmed = actualData.Global.TotalConfirmed;
+    document.getElementById("totalconf").innerHTML = GlobalTotalconfirmed;
+
+    const GlobalNewDeath = actualData.Global.NewDeaths;
+    document.getElementById("newdeath").innerHTML = GlobalNewDeath;
+
+    const GlobalTotalDeath = actualData.Global.TotalDeaths;
+    document.getElementById("totaldeath").innerHTML = GlobalTotalDeath;
+
+    const GlobalNewRecovered = actualData.Global.NewRecovered;
+    document.getElementById("newrecovered").innerHTML = GlobalNewRecovered;
+
+    const GlobalTotalRecovered = actualData.Global.TotalRecovered;
+    document.getElementById("totalrecovered").innerHTML = GlobalTotalRecovered;
+  })
